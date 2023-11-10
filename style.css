@@ -1,0 +1,130 @@
+/* Add this CSS code to your style.css file */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+#container {
+    display: flex;
+    height: 100vh;
+}
+
+#magic-ball {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scene {
+    width: 100%;
+    height: 100%;
+    perspective: 800px;
+}
+
+.magic-ball {
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotateAnimation 10s infinite linear;
+}
+
+.surface {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: translateZ(100px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.reflection {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.patterns {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('patterns.png');
+    background-size: cover;
+    border-radius: 50%;
+    mix-blend-mode: overlay;
+}
+
+#content {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(45deg, #3498db, #e74c3c, #1abc9c, #f39c12);
+    color: white;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+.story {
+    margin-top: 20px;
+}
+
+.message {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotateX(60deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(60deg) rotateY(360deg);
+    }
+}
